@@ -1,51 +1,33 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import icon from '../assets/icon.svg';
+import Box from '@material-ui/core/Box';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+
 import './App.global.css';
 
-const Hello = () => {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200px" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-};
+import Header from './components/Header';
+import Library from './components/Library';
+
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+      padding: theme.spacing(3),
+    },
+  })
+);
 
 export default function App() {
+  const classes = useStyles();
+
   return (
     <Router>
-      <Switch>
-        <Route path="/" component={Hello} />
-      </Switch>
+      <Header />
+      <Box className={classes.root}>
+        <Switch>
+          <Route path="/" component={Library} />
+        </Switch>
+      </Box>
     </Router>
   );
 }
