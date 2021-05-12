@@ -1,33 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Box from '@material-ui/core/Box';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.global.css';
 
-import Header from './components/Header';
 import Library from './components/Library';
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-  })
-);
+import Settings from './components/Settings';
+import Photo from './components/Photo';
 
 export default function App() {
-  const classes = useStyles();
-
   return (
     <Router>
-      <Header />
-      <Box className={classes.root}>
-        <Switch>
-          <Route path="/" component={Library} />
-        </Switch>
-      </Box>
+      <Switch>
+        <Route path="/" exact component={Library} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/photo" component={Photo} />
+      </Switch>
     </Router>
   );
 }

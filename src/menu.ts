@@ -100,7 +100,7 @@ export default class MenuBuilder {
       label: '显示',
       submenu: [
         {
-          label: 'Reload',
+          label: '重新加载',
           accelerator: 'Command+R',
           click: () => {
             this.mainWindow.webContents.reload();
@@ -165,13 +165,13 @@ export default class MenuBuilder {
           },
         },
         {
-          label: '社区',
+          label: '检查更新',
           click() {
             shell.openExternal('https://www.electronjs.org/community');
           },
         },
         {
-          label: '日志',
+          label: '关于照片库',
           click() {
             shell.openExternal('https://github.com/electron/electron/issues');
           },
@@ -191,14 +191,14 @@ export default class MenuBuilder {
   buildDefaultTemplate() {
     const templateDefault = [
       {
-        label: '&File',
+        label: '文件(&F)',
         submenu: [
           {
-            label: '&Open',
+            label: '打开',
             accelerator: 'Ctrl+O',
           },
           {
-            label: '&Close',
+            label: '退出',
             accelerator: 'Ctrl+W',
             click: () => {
               this.mainWindow.close();
@@ -207,20 +207,20 @@ export default class MenuBuilder {
         ],
       },
       {
-        label: '&View',
+        label: '查看(&V)',
         submenu:
           process.env.NODE_ENV === 'development' ||
           process.env.DEBUG_PROD === 'true'
             ? [
                 {
-                  label: '&Reload',
+                  label: '重新加载',
                   accelerator: 'Ctrl+R',
                   click: () => {
                     this.mainWindow.webContents.reload();
                   },
                 },
                 {
-                  label: 'Toggle &Full Screen',
+                  label: '进入全屏幕',
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
@@ -229,7 +229,7 @@ export default class MenuBuilder {
                   },
                 },
                 {
-                  label: 'Toggle &Developer Tools',
+                  label: '进入开发者工具',
                   accelerator: 'Alt+Ctrl+I',
                   click: () => {
                     this.mainWindow.webContents.toggleDevTools();
@@ -238,7 +238,7 @@ export default class MenuBuilder {
               ]
             : [
                 {
-                  label: 'Toggle &Full Screen',
+                  label: '进入全屏幕',
                   accelerator: 'F11',
                   click: () => {
                     this.mainWindow.setFullScreen(
@@ -249,7 +249,7 @@ export default class MenuBuilder {
               ],
       },
       {
-        label: '帮助',
+        label: '帮助(&H)',
         submenu: [
           {
             label: '开始使用',
@@ -266,13 +266,13 @@ export default class MenuBuilder {
             },
           },
           {
-            label: '社区',
+            label: '检查更新',
             click() {
               shell.openExternal('https://www.electronjs.org/community');
             },
           },
           {
-            label: '日志',
+            label: '关于照片库',
             click() {
               shell.openExternal('https://github.com/electron/electron/issues');
             },
