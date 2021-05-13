@@ -7,7 +7,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import PhotoHeader from './PhotoHeader';
 import PhotoDrawer from './PhotoDrawer';
 import PhotoInfo from './PhotoInfo';
-import PhotoFace from './PhotoFace';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -54,6 +53,8 @@ const Photo = () => {
       setDrawerTitle('人脸识别');
     } else if (type === 'tags') {
       setDrawerTitle('智能标签');
+    } else if (type === 'like') {
+      setDrawerTitle('以图搜图');
     }
   }
 

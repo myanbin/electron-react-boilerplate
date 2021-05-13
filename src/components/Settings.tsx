@@ -64,10 +64,12 @@ const Settings = () => {
         <Typography variant="h5" gutterBottom>
           照片源
         </Typography>
-        <Typography paragraph>
-          在此处添加更多文件夹
+        <Typography gutterBottom>
+          在照片库中包含更多的文件夹
         </Typography>
-        <Button variant="contained" color="primary">添加文件夹</Button>
+        <Typography gutterBottom>
+          <Button variant="contained" color="primary">添加文件夹</Button>
+        </Typography>
         <List component="nav" className={classes.sourceList}>
           <ListItem button>
             <ListItemAvatar>
@@ -100,7 +102,7 @@ const Settings = () => {
         <Typography variant="h5" gutterBottom>
           外观
         </Typography>
-        <Typography paragraph>
+        <Typography gutterBottom>
           选择应用主题
         </Typography>
         <FormControl component="fieldset">

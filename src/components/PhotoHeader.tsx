@@ -11,6 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import InfoIcon from '@material-ui/icons/Info';
 import LabelIcon from '@material-ui/icons/Label';
 import FaceIcon from '@material-ui/icons/Face';
+import ImageSearchIcon from '@material-ui/icons/ImageSearch';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,6 +61,9 @@ const PhotoHeader = (props: Props) => {
         </IconButton>
         <IconButton color="inherit" aria-label="tags" onClick={() => props.open('tags')}>
           <LabelIcon />
+        </IconButton>
+        <IconButton color="inherit" aria-label="tags" onClick={() => props.open('like')}>
+          <ImageSearchIcon />
         </IconButton>
         <IconButton color="secondary" aria-label="delete">
           <DeleteIcon />
