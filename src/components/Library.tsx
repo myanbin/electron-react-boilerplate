@@ -32,9 +32,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const Library = () => {
   const classes = useStyles();
 
+  const updateLibrary = () => {
+    console.log('update library...');
+  };
+
   return (
     <div>
-      <LibraryHeader />
+      <LibraryHeader update={updateLibrary} />
       <Toolbar variant="dense" />
       <Box className={classes.root}>
         <Link to="/photo" className={classes.photo}>

@@ -7,9 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import ViewComfyIcon from '@material-ui/icons/ViewComfy';
-import ViewModuleIcon from '@material-ui/icons/ViewModule';
 import SettingsIcon from '@material-ui/icons/Settings';
+import RefreshIcon from '@material-ui/icons/Refresh';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -19,7 +18,11 @@ const useStyles = makeStyles(() =>
   })
 );
 
-const LibraryHeader = () => {
+interface Props {
+  update: () => void
+}
+
+const LibraryHeader = (props: Props) => {
   const classes = useStyles();
   const history = useHistory();
 
@@ -32,11 +35,8 @@ const LibraryHeader = () => {
         <Typography variant="inherit" color="inherit" className={classes.appTitle}>
           照片库
         </Typography>
-        <IconButton color="inherit" aria-label="info">
-          <ViewComfyIcon />
-        </IconButton>
-        <IconButton color="inherit" aria-label="info">
-          <ViewModuleIcon />
+        <IconButton color="inherit" aria-label="info" onClick={props.update}>
+          <RefreshIcon />
         </IconButton>
         <IconButton color="inherit" aria-label="info" onClick={() => history.push('/settings')}>
           <SettingsIcon />

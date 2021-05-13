@@ -228,13 +228,6 @@ export default class MenuBuilder {
                     );
                   },
                 },
-                {
-                  label: '进入开发者工具',
-                  accelerator: 'Alt+Ctrl+I',
-                  click: () => {
-                    this.mainWindow.webContents.toggleDevTools();
-                  },
-                },
               ]
             : [
                 {
@@ -265,6 +258,15 @@ export default class MenuBuilder {
               );
             },
           },
+          { type: 'separator' },
+          {
+            label: '进入开发者工具',
+            accelerator: 'Alt+Ctrl+I',
+            click: () => {
+              this.mainWindow.webContents.toggleDevTools();
+            },
+          },
+          { type: 'separator' },
           {
             label: '检查更新',
             click() {
